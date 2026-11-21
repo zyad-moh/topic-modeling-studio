@@ -69,7 +69,7 @@ async def upload_data(request: Request, project_id: str, file: UploadFile,
     
     collection = request.app.db_client[
         app_settings.MONGODB_DATABASE
-    ]["datasets"]
+    ]["datasets"] #each user has it's data in a raw in collection named datasets
 
     flag = await collection.find_one({
             "project_id": project_id
